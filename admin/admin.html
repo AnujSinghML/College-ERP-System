@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+     <!-- Select2 CSS -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .sidebar-link.active {
+            background-color: #4B5563;
+            color: white;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .sub-option {
+            padding-left: 2rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <div class="w-64 bg-gray-800 text-white">
+            <div class="p-4">
+                <h2 id="admin-dashboard" class="text-2xl font-semibold">Admin Dashboard</h2>
+            </div>
+
+            <a href="#" class="sidebar-link block py-2 px-4 hover:bg-gray-700" data-target="profile">Profile</a>
+            <a href="#" class="sidebar-link block py-2 px-4 hover:bg-gray-700" data-target="department">Department</a>
+            
+            <div id="department-sub-options" class="hidden">
+                <a href="#" class="sub-option block py-2 px-4 hover:bg-gray-700" data-target="department-update">Update</a>
+                <a href="#" class="sub-option block py-2 px-4 hover:bg-gray-700" data-target="department-view">View</a>
+            </div>
+
+            <a href="#" class="sidebar-link block py-2 px-4 hover:bg-gray-700" data-target="instructor">Instructor</a>
+            
+            <div id="instructor-sub-options" class="hidden">
+                <a href="#" class="sub-option block py-2 px-4 hover:bg-gray-700" data-target="instructor-update">Update</a>
+                <a href="#" class="sub-option block py-2 px-4 hover:bg-gray-700" data-target="instructor-view">View</a>
+            </div>
+
+            <a href="#" class="sidebar-link block py-2 px-4 hover:bg-gray-700" data-target="student">Student</a>
+        </div>
+<!----------------------------------- PROFILE------------------------------------------------------------------------------------------ -->
+        <div class="flex-1 overflow-y-auto p-8">
+            <div id="profile-section" class="content-section">
+                <h2 class="text-2xl font-semibold mb-4">Profile Information</h2>
+                <div id="admin-profile" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <p><strong>Name:</strong> <span id="admin-name">Loading...</span></p>
+                    <p><strong>Role:</strong> <span id="admin-role">Admin</span></p>
+                </div>
+            </div>
+<!----------------------------------------- DEPARTMENTT------------------------------------------------------------------------------------- -->
+<!-- UPDATE ------------------------------------------------------- -->
+            <div id="department-update-section" class="content-section">
+                <h2 class="text-2xl font-semibold mb-4">Manage Departments</h2>
+                <form id="department-form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="dept_name">
+                            Department Name:
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="dept_name" type="text" required>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="contact_no">
+                            Contact No:
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="contact_no" type="text" required>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="location">
+                            Location:
+                        </label>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="location" type="text" required>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                            Add/Update Department
+                        </button>
+                    </div>
+                </form>
+                <button id="delete-department" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    Delete Department
+                </button>
+            </div>
+
+    <!-- VIEW------------------------------------------------------------- -->
+            <div id="department-view-section" class="content-section">
+                <h2 class="text-2xl font-semibold mb-4">View Departments</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white">
+                        <thead class="bg-gray-800 text-white">
+                            <tr>
+                                <th class="py-2 px-4 text-left">Dept ID</th>
+                                <th class="py-2 px-4 text-left">Dept Name</th>
+                                <th class="py-2 px-4 text-left">Contact No</th>
+                                <th class="py-2 px-4 text-left">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody id="department-table-body">
+                            <!-- Table rows will be dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+<!------------------------------------- INSTRUCTOR --------------------------------------------------------------------------------------- -->
+            
+
+                <!-- Add your instructor viewing form here -->
+                <div id="instructor-update-section" class="content-section">
+                    <h2 class="text-2xl font-semibold mb-4">Manage Instructors</h2>
+                     
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-2">Add/Update Instructor</h3>
+        <form id="instructor-form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="instructor_id">
+                    Instructor ID:
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="instructor_id" type="number" placeholder="Instructor ID">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="instructor_name">
+                    Name:
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="instructor_name" type="text" placeholder="Instructor Name">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="instructor_contact">
+                    Contact:
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="instructor_contact" type="text" placeholder="Contact Number">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="instructor_email">
+                    Email:
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="instructor_email" type="email" placeholder="Email Address">
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="instructor_department">
+                    Department:
+                </label>
+                <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="instructor_department">
+                    <!-- Department options will be populated dynamically -->
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="instructor_courses">
+                    Courses:
+                </label>
+                <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="instructor_courses" multiple>
+                    <!-- Course options will be populated dynamically -->
+                </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="instructor_head_of_dept">
+                    Head of Department:
+                </label>
+                <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="instructor_head_of_dept">
+                    <option value="">Not a Head of Department</option>
+                    <!-- Department options will be populated dynamically -->
+                </select>
+            </div>
+            <div class="flex items-center justify-between">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Add/Update Instructor
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-2">Remove an Instructor</h3>
+        <form id="remove-instructor-form" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="remove_instructor_id">
+                    Instructor ID:
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="remove_instructor_id" type="number" placeholder="Instructor ID to remove">
+            </div>
+            <div class="flex items-center justify-between">
+                <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                    Remove Instructor
+                </button>
+            </div>
+        </form>
+    </div>
+                </div>
+
+                          <!--------------------------------------------------------------------------------------  -->
+                          <div id="instructor-view-section" class="content-section">
+                        <h3 class="text-xl font-semibold mb-2">View Instructors</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white">
+                                <thead class="bg-gray-800 text-white">
+                                    <tr>
+                                        <th class="py-2 px-4">ID</th>
+                                        <th class="py-2 px-4">Name</th>
+                                        <th class="py-2 px-4">Phone</th>
+                                        <th class="py-2 px-4">Email</th>
+                                        <th class="py-2 px-4">Head of Dept</th>
+                                        <th class="py-2 px-4">Courses</th>
+                                        <th class="py-2 px-4">Department</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="instructor-table-body">
+                                    <!-- Instructor data will be inserted here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                <!-- </div>
+            </div> -->
+<!-- -------------------------------STUDENT------------------------------------------------------------------------------------------------ -->
+            <div id="student-section" class="content-section">
+                <h2 class="text-2xl font-semibold mb-4">Manage Students</h2>
+                <!-- Add your student management form here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="delete-modal" class="modal hidden fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full">
+        <div class="modal-content relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white">
+            <div class="mt-3 text-center">
+                <h3 class="text-lg leading-6 font-medium text-gray-900">Select Department to Delete</h3>
+                <div class="mt-2 px-7 py-3">
+                    <select id="dept-select" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </div>
+                <div class="items-center px-4 py-3">
+                    <button id="confirm-delete" class="px-4 py-2 bg-red-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-300">
+                        Delete
+                    </button>
+                    <button id="cancel-delete" class="mt-3 px-4 py-2 bg-gray-300 text-gray-800 text-base font-medium rounded-md w-full shadow-sm hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+    <!-- jQuery (required for Select2) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Select2 JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+<script>
+    // Initialize Select2 on the courses dropdown
+    $(document).ready(function() {
+        $('#instructor_courses').select2({
+            placeholder: 'Select courses',
+            allowClear: true,
+            width: '100%'
+        });
+    });
+</script>
+</body>
+</html>
