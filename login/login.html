@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Login's Page</title>
+  <link rel="stylesheet" href="login.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      width: 300px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+   <h2>Login</h2>
+    <form id="login-form">
+      <label for="role">Select Role:</label>
+      <select id="role" name="role">
+        <option value="">Select Role</option>
+        <option value="admin">Admin</option>
+        <option value="faculty">Faculty</option>
+        <option value="student">Student</option>
+        <option value="account_personal">Account Personal</option>
+      </select>
+      <br><br>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <br><br>
+      <button type="submit">Login</button>
+    </form>
+    <div id="message"></div>
+  </div>
+
+  
+  <script src="login.js"></script>
+</body>
+</html>
