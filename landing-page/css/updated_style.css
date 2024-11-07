@@ -123,26 +123,26 @@ p {
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	border: 1px solid #ffc600;
+	border: 1px solid #FF6F61;
 	padding: 0 35px;
 	font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 	line-height: 50px;
 	border-radius: 5px;
-    color: #07294d;
+    color: #008080;
     cursor: pointer;
     position: relative;
     overflow: hidden;
     z-index: 5;
     -webkit-transition: 0.4s ease-in-out;
     transition: 0.4s ease-in-out;
-    background-color: #ffc600;
+    background-color: #FF6F61;
 }
 .main-btn:hover{
-    color: #ffc600;
-    border-color: #07294d;
-    background-color: #07294d;
+    color: #FF6F61;
+    border-color: #008080;
+    background-color: #008080;
 }
 
 
@@ -151,7 +151,7 @@ p {
 
 .section-title{}
 .section-title h5{
-    color: #07294d;
+    color: #008080;
     position: relative;
     padding-bottom: 12px;
 }
@@ -160,7 +160,7 @@ p {
     position: absolute;
     width: 35px;
     height: 2px;
-    background-color: #ffc600;
+    background-color: #FF6F61;
     bottom: 0;
     left: 0;
 }
@@ -182,7 +182,7 @@ p {
 	z-index: 9999;
 }
 .preloader .color-1{
-    background-color: #ffc600 !important;
+    background-color: #FF6F61 !important;
 }
 .rubix-cube {
 	border: 1px solid #FFF;
@@ -198,7 +198,7 @@ p {
 .rubix-cube .layer{
 	width:14px;
 	height:14px;
-	background-color:#07294d;
+	background-color:#008080;
 	border:1px solid #FFF;
 	position:absolute;
 	
@@ -382,7 +382,7 @@ p {
 /*===== Header top =====*/
 
 .header-top{
-    background-color: #07294d;
+    background-color: #008080;
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -437,12 +437,12 @@ p {
 }
 .support-button .support .cont p{
     font-size: 13px;
-    color: #8a8a8a;
+    color: #333333;
     line-height: 18px
 }
 .support-button .support .cont span{
     font-size: 18px;
-    color: #07294d;
+    color: #008080;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 }
@@ -508,7 +508,7 @@ p {
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    color: #07294d;
+    color: #008080;
     text-transform: uppercase;
     -webkit-transition: all 0.4s linear;
     transition: all 0.4s linear;
@@ -517,14 +517,14 @@ p {
 
 .navigation .navbar .navbar-nav > li > a.active,
 .navigation .navbar .navbar-nav > li > a:hover{
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .navigation .navbar .navbar-nav li .sub-menu{
     position: absolute;
     top: 110%;
     left: 0;
-    background-color: #07294d;
+    background-color: #008080;
     width: 200px;
     opacity: 0;
     visibility: hidden;
@@ -550,7 +550,7 @@ p {
 .navigation .navbar .navbar-nav li .sub-menu li a.active,
 .navigation .navbar .navbar-nav li .sub-menu li a:hover{
     padding-left: 20px;
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .sub-nav-toggler{
@@ -571,7 +571,7 @@ p {
 .navbar .navbar-toggler .icon-bar {
 	width: 30px;
 	height: 2px;
-	background-color: #07294d;
+	background-color: #008080;
 	display: block;
 	margin: 5px 0;
     position: relative;
@@ -605,14 +605,14 @@ p {
 
 .right-icon ul li a{
     font-size: 18px;
-    color: #07294d;
+    color: #008080;
     position: relative;
     padding-right: 7px;
 }
 .right-icon ul li a span{
     font-size: 12px;
     color: #fff;
-    background-color: #ffc600;
+    background-color: #FF6F61;
     border-radius: 50%;
     padding: 0px 4px;
     position: absolute;
@@ -712,7 +712,7 @@ p {
 }
 
 .category{
-    background-color: #07294d;
+    background-color: #008080;
     border-radius: 10px;
     margin-top: -150px;
     position: relative;
@@ -777,7 +777,7 @@ p {
     transition: all 0.4s linear;
 }
 .category-slied .slick-arrow i:hover{
-    background-color: #ffc600;
+    background-color: #FF6F61;
 }
 
 
@@ -836,11 +836,11 @@ p {
 
 .about-event ul li .singel-event span{
     font-size: 14px;
-    color: #8a8a8a;
+    color: #333333;
     margin-right: 20px;
 }
 .about-event ul li .singel-event span i{
-    color: #ffc600;
+    color: #FF6F61;
     margin-right: 3px;
 }
 .about-event ul li .singel-event a{
@@ -855,7 +855,7 @@ p {
     transition: all 0.4s linear;
 }
 .about-event ul li .singel-event a:hover h4{
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 
@@ -872,7 +872,7 @@ p {
 }
 
 .apply-color-1{
-    background-color: #07294d;
+    background-color: #008080;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
 }
@@ -895,7 +895,7 @@ p {
     padding-bottom: 45px;
 }
 .apply .apply-cont .main-btn:hover{
-    border-color: #ffc600;
+    border-color: #FF6F61;
 }
 
 
@@ -931,14 +931,14 @@ p {
 }
 .singel-course .thum .price span{
     font-size: 14px;
-    color: #07294d;
+    color: #008080;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     width: 55px;
     height: 55px;
     line-height: 55px;
     border-radius: 50%;
-    background-color: #ffc600;
+    background-color: #FF6F61;
     text-align: center;
 }
 .singel-course .cont{
@@ -957,7 +957,7 @@ p {
 }
 .singel-course .cont ul li > i{
     font-size: 13px;
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .singel-course .cont span{
@@ -974,7 +974,7 @@ p {
     transition: all 0.4s linear;
 }
 .singel-course .cont h4:hover{
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .singel-course .course-teacher{
@@ -1003,7 +1003,7 @@ p {
     transition: all 0.4s linear;
 }
 .singel-course .course-teacher .name a:hover h6{
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .singel-course .course-teacher .admin{
@@ -1022,16 +1022,16 @@ p {
 }
 .singel-course .course-teacher .admin ul li a{
     font-size: 15px;
-    color: #8a8a8a;
+    color: #333333;
     -webkit-transition: all 0.4s linear;
     transition: all 0.4s linear;
 }
 .singel-course .course-teacher .admin ul li a:hover{
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .singel-course .course-teacher .admin ul li a span{
-    color: #8a8a8a;
+    color: #333333;
     margin-left: 3px;
 }
 
@@ -1060,8 +1060,8 @@ p {
 }
 
 .course-slied .slick-arrow:hover i{
-    border-color: #ffc600;
-    background-color: #ffc600;
+    border-color: #FF6F61;
+    background-color: #FF6F61;
 }
 
 
@@ -1090,8 +1090,8 @@ p {
     line-height: 120px;
     text-align: center;
     font-size: 24px;
-    background-color: #ffc600;
-    color: #07294d;
+    background-color: #FF6F61;
+    color: #008080;
     border-radius: 50%;
 }
 
@@ -1178,12 +1178,12 @@ p {
     transition: all 0.4s linear;
 }
 .singel-teachers .cont a:hover h6{
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .singel-teachers .cont span{
     font-size: 14px;
-    color: #8a8a8a;
+    color: #333333;
 }
 
 
@@ -1232,17 +1232,17 @@ p {
 }
 .singel-publication .image .add-cart ul li a{
     font-size: 16px;
-    color: #ffc600;
+    color: #FF6F61;
     width: 35px;
     line-height: 35px;
-    border: 1px solid #ffc600;
+    border: 1px solid #FF6F61;
     text-align: center;
     -webkit-transition: all 0.4s linear;
     transition: all 0.4s linear;
 }
 .singel-publication .image .add-cart ul li a:hover{
-    background-color: #ffc600;
-    color: #07294d;
+    background-color: #FF6F61;
+    color: #008080;
 }
 
 
@@ -1270,12 +1270,12 @@ p {
     transition: all 0.4s linear;
 }
 .singel-publication .cont .name a:hover h6{
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .singel-publication .cont .name span{
     font-size: 13px;
-    color: #8a8a8a;
+    color: #333333;
 }
 .singel-publication .cont .button{
     width: 50%;
@@ -1331,9 +1331,9 @@ p {
     height: 45px;
     line-height: 45px;
     text-align: center;
-    background-color: #ffc600;
+    background-color: #FF6F61;
     border-radius: 50%;
-    color: #07294d;
+    color: #008080;
     font-size: 18px;
 }
 .singel-testimonial .testimonial-cont {
@@ -1372,7 +1372,7 @@ p {
 }
 
 .testimonial-slied .slick-dots li.slick-active button{
-    background-color: #ffc600;
+    background-color: #FF6F61;
 }
 
 
@@ -1383,7 +1383,7 @@ p {
 ======================================================*/
 
 .footer-top{
-    background-color: #07294d;
+    background-color: #008080;
 }
 
 .footer-about {
@@ -1414,7 +1414,7 @@ p {
     
 }
 .footer-about ul li a:hover{
-    background-color: #ffc600;
+    background-color: #FF6F61;
     color: #021d3a;
     -webkit-transition: all 0.4s linear;
     transition: all 0.4s linear;
@@ -1446,12 +1446,12 @@ p {
 }
 .footer-link ul li a i{
     margin-right: 8px;
-    color: #ffc600;
+    color: #FF6F61;
     -webkit-transition: all 0.4s linear;
     transition: all 0.4s linear;
 }
 .footer-link ul li a:hover {
-    color: #ffc600;
+    color: #FF6F61;
 }
 .footer-link ul li a:hover i{
     margin-right: 15px;
@@ -1472,7 +1472,7 @@ p {
 
 .footer-address ul li .icon i{
     font-size: 18px;
-    color: #ffc600;
+    color: #FF6F61;
     position: absolute;
     left: 0;
     top: 5px;
@@ -1501,7 +1501,7 @@ p {
     width: 40px;
     height: 40px;
     line-height: 35px;
-    background-color: #ffc600;
+    background-color: #FF6F61;
     color: #fff;
     font-size: 28px;
     border-radius: 5px;
@@ -1561,7 +1561,7 @@ p {
     color: #fff;
 }
 .category-2-items .singel-items .items-cont h5:hover{
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 
@@ -1573,12 +1573,12 @@ p {
 	margin-top: -154px;
 }
 .category-form .form-title{
-    background-color: #07294d;
+    background-color: #008080;
     padding-top: 35px;
     padding-bottom: 40px;
 }
 .category-form .form-title h3{
-    color: #ffc600;
+    color: #FF6F61;
     font-size: 36px;
 }
 .category-form .form-title span{
@@ -1602,7 +1602,7 @@ p {
     height: 60px;
     padding: 0 30px;
     font-size: 15px;
-    color: #8a8a8a;
+    color: #333333;
     border: 1px solid #a1a1a1;
     border-radius: 5px;
 }
@@ -1633,14 +1633,14 @@ p {
 }
 .singel-course-2 > .thum .price span {
 	font-size: 14px;
-	color: #07294d;
+	color: #008080;
 	font-family: 'Montserrat', sans-serif;
 	font-weight: 700;
 	width: 55px;
 	height: 55px;
 	line-height: 55px;
 	border-radius: 50%;
-	background-color: #ffc600;
+	background-color: #FF6F61;
 	text-align: center;
 }
 
@@ -1673,7 +1673,7 @@ p {
     transition: all 0.4s linear;
 }
 .singel-course-2 > .thum .course-teacher .name h6:hover{
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .singel-course-2 > .thum .course-teacher .review{
@@ -1685,7 +1685,7 @@ p {
 .singel-course-2 > .thum .course-teacher .review ul li{
     display: inline-block;
     font-size: 12px;
-    color: #ffc600;
+    color: #FF6F61;
 }
 .singel-course-2 > .thum .course-teacher .review ul li{}
 
@@ -1700,7 +1700,7 @@ p {
     transition: all 0.4s linear;
 }
 .singel-course-2 .cont h4:hover{
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 
@@ -1714,7 +1714,7 @@ p {
 }
 .singel-counter span{
     font-size: 36px;
-    color: #ffc600;
+    color: #FF6F61;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
 }
@@ -1729,7 +1729,7 @@ p {
 
 .counter-3{}
 .counter-3 p{
-    color: #07294d;
+    color: #008080;
     font-weight: 600;
 }
 
@@ -1767,7 +1767,7 @@ p {
     transition: all 0.4s linear;
 }
 .teachers-2 .teachers-2-singel .cont a:hover h5{
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .teachers-2 .teachers-2-singel .cont p{
@@ -1775,11 +1775,11 @@ p {
 }
 .teachers-2 .teachers-2-singel .cont span{
     font-size: 14px;
-    color: #07294d;
+    color: #008080;
 }
 .teachers-2 .teachers-2-singel .cont span i{
     margin-right: 5px;
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .student-slied{
@@ -1787,7 +1787,7 @@ p {
 }
 
 .happy-student{
-    background-color: #07294d;
+    background-color: #008080;
     padding-top: 65px;
     padding-left: 80px;
     padding-right: 80px;
@@ -1795,7 +1795,7 @@ p {
     border-radius: 5px;
     position: relative;
 }.happy-student{
-    background-color: #07294d;
+    background-color: #008080;
     padding-top: 65px;
     padding-left: 80px;
     padding-right: 80px;
@@ -1854,7 +1854,7 @@ p {
     height: 100%;
     background: -webkit-gradient(linear, left top, right top, from(rgba(7,41,77,0.3)),color-stop(10%, rgba(7,41,77,0.3)),to(rgba(7,41,77,1)));
     background: linear-gradient(to right, rgba(7,41,77,0.3) 0%,rgba(7,41,77,0.3) 10%,rgba(7,41,77,1) 100%); 
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d07294d', endColorstr='#07294d',GradientType=1 ); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d07294d', endColorstr='#008080',GradientType=1 ); 
 }
 
 .event-2 .event-title h3 {
@@ -1876,7 +1876,7 @@ p {
 	margin-right: 20px;
 }
 .event-2 ul li .singel-event span i {
-	color: #ffc600;
+	color: #FF6F61;
 	margin-right: 3px;
 }
 .event-2 ul li .singel-event a {
@@ -1892,7 +1892,7 @@ p {
     transition: all 0.4s linear;
 }
 .event-2 ul li .singel-event a:hover h4 {
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 
@@ -1912,7 +1912,7 @@ p {
 }
 .count-down-cont h2{
     font-size: 72px;
-    color: #ffc600;
+    color: #FF6F61;
     font-weight: 700;
     padding-bottom: 37px;
 }
@@ -1953,12 +1953,12 @@ p {
     z-index: 5;
 }
 .category-form-3 .form-title {
-	background-color: #ffc600;
+	background-color: #FF6F61;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 .category-form-3 .form-title h3 {
-	color: #07294d;
+	color: #008080;
 }
 .category-form-3 .form-title span {
     font-weight: 600;
@@ -1967,8 +1967,8 @@ p {
     color: #fff;
 }
 .category-form-3 .main-btn:hover{
-    color: #ffc600;
-    border-color: #07294d;
+    color: #FF6F61;
+    border-color: #008080;
 }
 
 
@@ -1991,7 +1991,7 @@ p {
     padding: 0;
 }
 .page-banner-cont .breadcrumb .breadcrumb-item {
-	color: #ffc600;
+	color: #FF6F61;
 	font-size: 18px;
 	font-weight: 600;
 	margin-bottom: 2px;
@@ -2053,15 +2053,15 @@ p {
 .courses-top-search .nav .nav-item{
     margin-right: 15px;
     font-size: 15px;
-    color: #8a8a8a;
+    color: #333333;
 }
 .courses-top-search .nav .nav-item a{
     font-size: 16px;
-    color: #8a8a8a;
+    color: #333333;
 }
 
 .courses-top-search .nav .nav-item a.active{
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .courses-search{
@@ -2072,7 +2072,7 @@ p {
     width: 240px;
     background-color: #f6f6f6;
     border: 0;
-    color: #8a8a8a;
+    color: #333333;
     font-size: 14px;
     border-radius: 5px;
     padding: 0 20px;
@@ -2084,7 +2084,7 @@ p {
     padding: 0;
     height: 30px;
     font-size: 15px;
-    color: #8a8a8a;
+    color: #333333;
     border: 0;
     background: none;
     cursor: pointer;
@@ -2103,7 +2103,7 @@ p {
 }
 .courses-pagination .pagination .page-item a{
     font-size: 15px;
-    color: #07294d;
+    color: #008080;
     width: 40px;
     height: 40px;
     line-height: 36px;
@@ -2115,8 +2115,8 @@ p {
 }
 .courses-pagination .pagination .page-item a.active,
 .courses-pagination .pagination .page-item a:hover{
-    background-color: #ffc600;
-    border-color: #ffc600;
+    background-color: #FF6F61;
+    border-color: #FF6F61;
 }
 
 
@@ -2198,7 +2198,7 @@ p {
 	content: "\f107";
 	font-family: FontAwesome;
 	font-size: 18px;
-	color: #8a8a8a;
+	color: #333333;
 	position: absolute;
 	top: 15px;
 	right: 15px;
@@ -2219,13 +2219,13 @@ p {
 }
 
 .curriculam-cont .accordion .card .card-header a ul li > i{
-    color: #ffc600;
+    color: #FF6F61;
     font-size: 15px;
     margin-right: 5px;
 }
 .curriculam-cont .accordion .card .card-header a ul li > .lecture{
     font-size: 15px;
-    color: #8a8a8a;
+    color: #333333;
 }
 .curriculam-cont .accordion .card .card-header a ul li > .head{
     font-size: 16px;
@@ -2236,7 +2236,7 @@ p {
 }
 .curriculam-cont .accordion .card .card-header a ul li > .time {
 	font-size: 15px;
-	color: #8a8a8a;
+	color: #333333;
 	text-align: right;
 	padding-right: 30px;
 }
@@ -2275,7 +2275,7 @@ p {
 }
 .instructor-cont .instructor-author .author-name span{
     font-size: 15px;
-    color: #8a8a8a;
+    color: #333333;
 }
 .instructor-cont .instructor-author .author-name .social{
     padding-top: 25px;
@@ -2343,7 +2343,7 @@ p {
 }
 .reviews-cont ul li .singel-reviews .reviews-author .author-name span{
     font-size: 15px;
-    color: #8a8a8a;
+    color: #333333;
     font-weight: 400;
     font-family: 'Poppins', sans-serif;
 }
@@ -2363,7 +2363,7 @@ p {
 .reviews-cont ul li .singel-reviews .reviews-description .rating ul li{
     display: inline-block;
     font-size: 15px;
-    color: #ffc600;
+    color: #FF6F61;
 }
 .reviews-cont ul li .singel-reviews .reviews-description .rating span{
     font-size: 15px;
@@ -2412,7 +2412,7 @@ p {
 
 .reviews-cont .reviews-form .form-singel .rate:hover,
 .reviews-cont .reviews-form .form-singel .rate.selected {
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .reviews-cont .reviews-form .form-singel .rate .rate-item:hover ~ .rate-item,
@@ -2422,7 +2422,7 @@ p {
 
 .releted-courses .title h3{
     font-size: 30px;
-    color: #07294d;
+    color: #008080;
 }
 
 .course-features{
@@ -2433,13 +2433,13 @@ p {
 .course-features h4,
 .You-makelike h4{
     font-size: 24px;
-    color: #07294d;
+    color: #008080;
     padding-bottom: 15px;
 }
 .course-features ul{}
 .course-features ul li{
     font-size: 15px;
-    color: #8a8a8a;
+    color: #333333;
     overflow: hidden;
     line-height: 45px;
     border-bottom: 1px solid #d2d2d2;
@@ -2449,7 +2449,7 @@ p {
 }
 
 .course-features ul li i{
-    color: #ffc600;
+    color: #FF6F61;
     margin-right: 8px;
 }
 .course-features ul li span{
@@ -2467,7 +2467,7 @@ p {
     margin-top: 12px;
 }
 .course-features .price-button span b{
-    color: #ffc600;
+    color: #FF6F61;
 }
 .course-features .price-button .main-btn{
     float: right;
@@ -2516,13 +2516,13 @@ p {
     transition: all 0.4s linear;
 }
 .You-makelike .singel-makelike .cont h4:hover{
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 .You-makelike .singel-makelike .cont ul li {
     display: inline-block;
     margin-right: 15px;
-    color: #ffc600;
+    color: #FF6F61;
 }
 .You-makelike .singel-makelike .cont ul li a{
     font-size: 14px;
@@ -2567,11 +2567,11 @@ p {
 
 .singel-event-list .event-cont span {
 	font-size: 14px;
-	color: #8a8a8a;
+	color: #333333;
 	margin-right: 20px;
 }
 .singel-event-list .event-cont span i {
-	color: #ffc600;
+	color: #FF6F61;
 	margin-right: 3px;
 }
 .singel-event-list .event-cont a {
@@ -2586,7 +2586,7 @@ p {
     transition: all 0.4s linear;
 }
 .singel-event-list .event-cont a:hover h4 {
-    color: #ffc600;
+    color: #FF6F61;
 }
 
 
@@ -2613,7 +2613,7 @@ p {
     padding: 0 20px;
     border: 1px solid #a1a1a1;
     border-radius: 5px;
-    color: #8a8a8a;
+    color: #333333;
     font-size: 15px;
 }
 
@@ -2667,8 +2667,8 @@ p.form-message.error {
     width: 50px;
     line-height: 50px;
     border-radius: 50%;
-    border: 1px solid #07294d;
-    color: #07294d;
+    border: 1px solid #008080;
+    color: #008080;
     font-size: 24px;
     text-align: center;
 }
