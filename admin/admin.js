@@ -12,9 +12,36 @@ function loadAdminProfile() {
 }
 
 window.onload = function() {
-    loadAdminProfile();
-    showSection('profile'); // Show profile section by default
+    loadAdminProfile();       // Load the admin profile
+    loadCounts();    // Load department count
+    showSection('profile');    // Show profile section by default
 };
+function loadCounts() {
+    // Fetch total departments
+    fetch('http://localhost:3000/api/admin/department/list')
+        .then(response => response.json())
+        .then(departments => {
+            document.getElementById('total-departments').innerText = departments.length;
+        })
+        .catch(error => console.error('Error loading departments count:', error));
+
+    // Fetch total courses
+    fetch('http://localhost:3000/api/admin/courses/list')
+        .then(response => response.json())
+        .then(courses => {
+            document.getElementById('total-courses').innerText = courses.length;
+        })
+        .catch(error => console.error('Error loading courses count:', error));
+
+    // Fetch total instructors
+    fetch('http://localhost:3000/api/admin/instructor/all')
+        .then(response => response.json())
+        .then(instructors => {
+            document.getElementById('total-instructors').innerText = instructors.length;
+        })
+        .catch(error => console.error('Error loading instructors count:', error));
+}
+
 
 document.getElementById("department-form").addEventListener("submit", function (event) {
     event.preventDefault();
@@ -102,6 +129,11 @@ document.getElementById("cancel-delete").addEventListener("click", function () {
 });
 
 //VIEW--------------------------------------------------
+const viewDepartmentsButton = document.getElementById('view-departments');
+viewDepartmentsButton.addEventListener('click', () => showSection('department-view'));
+const viewInstructorsButton = document.getElementById('view-instructors');
+viewInstructorsButton.addEventListener('click', () => showSection('instructor-view'));
+
 function showSection(sectionId) {
     document.querySelectorAll('.content-section').forEach(section => {
         section.classList.remove('active');
@@ -120,7 +152,14 @@ function showSection(sectionId) {
         document.getElementById(`${sectionId}-section`).classList.add('active');
         document.querySelector('.sidebar-link[data-target="department"]').classList.add('active');
         document.querySelector(`.sub-option[data-target="${sectionId}"]`).classList.add('active');
-    } else if (sectionId === 'instructor') {
+    } else if (sectionId === 'department-view') {
+        document.getElementById('department-sub-options').classList.remove('hidden');
+        document.getElementById(`${sectionId}-section`).classList.add('active');
+        document.querySelector('.sidebar-link[data-target="department"]').classList.add('active');
+        document.querySelector(`.sub-option[data-target="${sectionId}"]`).classList.add('active');
+        loadDepartmentTable(); // Call the function to load the department table
+    } 
+    else if (sectionId === 'instructor') {
         document.getElementById('instructor-sub-options').classList.remove('hidden');
         document.getElementById('instructor-update-section').classList.add('active');
         document.querySelector(`.sidebar-link[data-target="${sectionId}"]`).classList.add('active');
@@ -130,7 +169,15 @@ function showSection(sectionId) {
         document.getElementById(`${sectionId}-section`).classList.add('active');
         document.querySelector('.sidebar-link[data-target="instructor"]').classList.add('active');
         document.querySelector(`.sub-option[data-target="${sectionId}"]`).classList.add('active');
-    } else {
+    }
+    else if (sectionId === 'instructor-view') {
+        document.getElementById('instructor-sub-options').classList.remove('hidden');
+        document.getElementById(`${sectionId}-section`).classList.add('active');
+        document.querySelector('.sidebar-link[data-target="instructor"]').classList.add('active');
+        document.querySelector(`.sub-option[data-target="${sectionId}"]`).classList.add('active');
+        document.getElementById('instructor-view-section').classList.remove('hidden');
+        loadInstructorTable(); }
+        else {
         document.getElementById('department-sub-options').classList.add('hidden');
         document.getElementById('instructor-sub-options').classList.add('hidden');
         document.getElementById(`${sectionId}-section`).classList.add('active');
