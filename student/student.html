@@ -1,1 +1,286 @@
-<p>hello student</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student viewment</title>
+    
+    <style>
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            line-height: 1.6;
+            display: flex;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #000;
+            color: white;
+            padding-top: 20px;
+            min-height: 100vh;
+        }
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .sidebar-link {
+            display: block;
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .sidebar-link:hover {
+            background-color: #333;
+        }
+        .sub-option {
+            padding-left: 40px;
+            font-weight: normal;
+            font-size: 0.9em;
+        }
+        .container {
+            flex-grow: 1;
+            padding: 20px;
+            max-width: calc(100% - 250px);
+        }
+
+        /* Header */
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section Header */
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h3 {
+            background-color: #333;
+            color: white;
+            padding: 12px;
+            margin: 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .section h3:before {
+            content: "▶";
+            margin-right: 10px;
+            font-size: 1.2em;
+            transition: transform 0.2s;
+        }
+        .section h3:hover:before {
+            transform: rotate(90deg);
+        }
+
+        /* Card Container */
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        /* Card */
+        .card {
+            flex: 1 1 calc(25% - 15px);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Card Header */
+        .card h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+        .red { background-color: #ff4d4f; }
+        .blue { background-color: #1890ff; }
+        .green { background-color: #52c41a; }
+        .yellow { background-color: #faad14; }
+
+        /* Card Content */
+        .card p {
+            margin: 5px 0;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        /* view Button */
+        .view-btn {
+            display: inline-block;
+            padding: 8px 12px;
+            margin-top: 15px;
+            background-color: #e0e0e0;
+            color: #333;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .view-btn:hover {
+            background-color: #cfcfcf;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>Student Dashboard</h2>
+
+        <a href="#" class="sidebar-link" data-target="profile">Profile</a>
+        <a href="#" class="sidebar-link" data-target="department">Department</a>
+        
+        <div id="department-sub-options" class="hidden">
+            <a href="./view.html" class="sub-option sidebar-link" data-target="department-view">View</a>
+        </div>
+
+        <a href="#" class="sidebar-link" data-target="instructor">Instructor</a>
+        
+        <div id="instructor-sub-options" class="hidden">
+            <a href="view.html" class="sub-option sidebar-link" data-target="instructor-view">View</a>
+        </div>
+        
+        <a href="#" class="sidebar-link" data-target="student">Courses</a>
+    </div>
+
+    <div class="container">
+        <div class="header">Student  viewment (in 2024)</div>
+
+        <div class="section">
+            <h3>Student Statistics</h3>
+            <div class="cards">
+                <div class="card">
+                    <h4 class="red">Course Stats</h4>
+                    <p>Total Course: 17</p>
+                    <p>Enrolled In: 5</p>
+                    <p>Sessions: 20</p>
+                    <a href="view.html" class="view-btn">view</a>
+                </div>
+                <div class="card">
+                    <h4 class="blue">Student Stats</h4>
+                    <p>Total Registered: 43</p>
+                    <p>Verified Accounts: 43</p>
+                    <p>Unverified Accounts: 0</p>
+                    <a href="view.html" class="view-btn">view</a>
+                </div>
+                <div class="card">
+                    <h4 class="green">Admission Stats</h4>
+                    <p>Total Applications: 6</p>
+                    <p>Approved: 6</p>
+                    <p>Unapproved: 0</p>
+                    <p>Today: 0</p>
+                    <a href="view.html" class="view-btn">view</a>
+                </div>
+                <div class="card">
+                    <h4 class="yellow">Backlog</h4>
+                    <p>Total Backlogs: 1</p>
+                    <p>Active : 0</p>
+                    <p>Pending: 1</p>
+                    <a href="view.html" class="view-btn">view</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Instructor Statistics</h3>
+            <div class="cards">
+                <div class="card">
+                    <h4 class="red">Instructor Stats</h4>
+                    <p>Notices: 16</p>
+                    <p>Tender: 0</p>
+                    <p>Advertisement: 0</p>
+                    <a href="view.html" class="view-btn">view</a>
+                </div>
+                <div class="card">
+                    <h4 class="blue">Stream stats</h4>
+                    <p>Total Slides: 5</p>
+                    <p>Published: 5</p>
+                    <p>UnPublished: 0</p>
+                    <a href="view.html" class="view-btn">view</a>
+                </div>
+                
+                <div class="card">
+                    <h4 class="yellow">Faculty</h4>
+                    <p>Departments: 8</p>
+                    <p>Total Faculties: 0</p>
+                    <p>Active: 0</p>
+                    <p>Disabled: 0</p>
+                    <a href="view.html" class="view-btn">view</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Department Statistics</h3>
+            <div class="cards">
+                <div class="card">
+                    <h4 class="red">Department Stats</h4>
+                    <p>Notices: 8</p>
+                    <p>Tender: 0</p>
+                    <p>Advertisement: 0</p>
+                    <a href="view.html" class="view-btn">view</a>
+                </div>
+                <div class="card">
+                    <h4 class="blue">Members</h4>
+                    <p>Total Slides: 5</p>
+                    <p>Published: 5</p>
+                    <p>UnPublished: 0</p>
+                    <a href="view.html" class="view-btn">view</a>
+                </div>
+                <div class="card">
+                    <h4 class="green">Labs</h4>
+                    <p>Total Slides: 4</p>
+                    <p>Published: 4</p>
+                    <p>UnPublished: 0</p>
+                    <a href="view.html" class="view-btn">view</a>
+                </div>
+                <div class="card">
+                    <h4 class="yellow">Faculty</h4>
+                    <p>Departments: 8</p>
+                    <p>Total Faculties: 0</p>
+                    <p>Active: 0</p>
+                    <p>Disabled: 0</p>
+                    <a href="view.html" class="view-btn">view</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

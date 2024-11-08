@@ -1,0 +1,64 @@
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
+  padding: 20px;
+}
+
+.tableTitle {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Styling for the instructor table */
+.instructorTable {
+  width: 100%;
+  max-width: 900px;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.instructorTable th, .instructorTable td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.instructorTable th {
+  background-color: #4a90e2;
+  color: white;
+}
+
+/* Hover effect */
+.instructorTable tr:hover {
+  background-color: #f0f8ff;
+}
+
+/* Alternate row background */
+.instructorTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Button styles */
+.boxBtn {
+  display: flex;
+  gap: 10px;
+}
+
+.btn, .adminBtn {
+  padding: 10px 20px;
+  background-color: #357ABD;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover, .adminBtn:hover {
+  background-color: #285E8E;
+}

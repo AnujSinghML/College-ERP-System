@@ -33,6 +33,179 @@ function connectToDatabase() {
     });
   });
 }
+app.post('/', (req, res) => {
+  const { str } = req.body; // Destructure 'str' from the request body
+  
+
+  // Log the incoming request body
+  console.log(`Received data: ${str}`);
+  
+  // Send a response back
+  return res.status(200).json({ message: `Hello, ${str}!` });
+});
+
+app.get('/student/table',(req, res) => {
+  db.query('select * from student', (err, data) => {
+    if(err) console.log(err);
+    return res.json(data)
+  })
+})
+
+app.get('/instructor/table',(req, res) => {
+  db.query('select * from instructor', (err, data) => {
+    if(err) console.log(err);
+    return res.json(data)
+  })
+})
+
+app.get('/instructor/exam/table', (req, res) => {
+  const sql = 'SELECT * FROM exam_schedule'; // Adjust the table name if it's different
+
+  db.query(sql, (err, data) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ message: 'Error retrieving exam data' });
+    }
+    res.status(200).json(data); // Respond with the retrieved exam data
+  });
+});
+
+
+app.get('/department',(req, res) => {
+  db.query('select * from department', (err, data) => {
+    if(err) console.log(err);
+    return res.json(data)
+  })
+})
+
+app.get('/courses',(req, res) => {
+  db.query('select * from courses', (err, data) => {
+    if(err) console.log(err);
+    return res.json(data)
+  })
+})
+
+app.post('/student/table',(req, res) => {
+  const {name,roll_no}= req.body;
+  console.log(req.body);
+  db.query('insert into student values(?,?)',[name,roll_no], (err, data) => {
+    if(err) console.log(err);
+    // return res.json(data)
+    res.status(200).send({
+      message: 'Student added successfully',
+      student: { name, roll_no }
+    });
+  })
+})
+
+app.post('/student/table/delete',(req, res) => {
+  const {roll_no} = req.body;
+  console.log(req.body);
+  db.query('DELETE FROM student WHERE roll_no = ?',[roll_no], (err,data)=>{
+    if (err) {
+      console.error('Error deleting the student:', err);
+      res.status(500).send('Server error');
+      return;
+    }
+
+    res.status(200).send({ success: true, message: 'Student deleted successfully' });
+  });
+})
+
+
+app.post('/instructor/table',(req, res) => {
+  const {id,name,ishead,dept_id,gender,email,phone} = req.body;
+  db.query('insert into instructor values(?,?,?,?,?,?,?)',[id,name,ishead,dept_id,gender,email,phone], (err, data) => {
+    if(err) console.log(err);
+    // return res.json(data)
+    res.status(200).send({
+      message: 'instructor added successfully',
+      student: {id, name, ishead, dept_id, gender, email, phone}
+    });
+  })
+
+})
+
+app.post('/instructor/table/delete',(req, res) => {
+  const {id} = req.body;
+  console.log(req.body);
+  db.query('DELETE FROM instructor WHERE id = ?',[id], (err,data)=>{
+    if (err) {
+      console.error('Error deleting the instructor:', err);
+      res.status(500).send('Server error');
+      return;
+    }
+    res.status(200).send({ success: true, message: 'instructor deleted successfully' });
+  });
+})
+
+
+app.post('/department',(req, res) => {
+  const {id,name,head_id}= req.body;
+  console.log(req.body);
+  db.query('insert into department values(?,?,?)',[id,name,head_id], (err, data) => {
+    if(err) console.log(err);
+    // return res.json(data)
+    res.status(200).send({
+      message: 'Deparment added successfully',
+      student: {id,name,head_id}
+    });
+  })
+})
+
+app.post('/department/delete',(req, res) => {
+  const {id} = req.body;
+  console.log(req.body);
+  db.query('DELETE FROM department WHERE id = ?',[id], (err,data)=>{
+    if (err) {
+      console.error('Error deleting the department:', err);
+      res.status(500).send('Server error');
+      return;
+    }
+    res.status(200).send({ success: true, message: 'department deleted successfully' });
+  });
+})
+
+app.post('/courses',(req, res) => {
+  const {id,name,instructor_id,dept_id}= req.body;
+  console.log(req.body);
+  db.query('insert into courses values(?,?,?)',[id,course_name,credits], (err, data) => {
+    if(err) console.log(err);
+    // return res.json(data)
+    res.status(200).send({
+      message: 'course added successfully',
+      student: {id,name,instructor_id,dept_id}
+    });
+  })
+})
+
+app.post('/courses/delete',(req, res) => {
+  const {course_id} = req.body;
+  console.log(req.body);
+  db.query('DELETE FROM courses WHERE course_id = ?',[course_id], (err,data)=>{
+    if (err) {
+      console.error('Error deleting the course:', err);
+      res.status(500).send('Server error');
+      return;
+    }
+    res.status(200).send({ success: true, message: 'department deleted successfully' });
+  });
+})
+
+
+app.post('/exam/table', (req, res) => {
+  const { exam_id, course_id, exam_date, start_time, end_time } = req.body;
+  const sql = 'INSERT INTO exams (exam_id, course_id, exam_date, start_time, end_time) VALUES (?, ?, ?, ?, ?)';
+
+  db.query(sql, [exam_id, course_id, exam_date, start_time, end_time], (err, data) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ message: 'Error adding exam' });
+    }
+    res.status(200).json({ message: 'Exam added successfully', exam: { exam_id, course_id, exam_date, start_time, end_time } });
+  });
+});
+
 
 // Login API-----------------------------------------------------------------------------------------------------------------
 app.post('/login', (req, res) => {
@@ -52,11 +225,11 @@ app.post('/login', (req, res) => {
     if (results.length > 0) {
       const redirectUrls = {
         admin: 'http://localhost:5500/admin/admin.html',
-        faculty: 'http://localhost:5500/faculty/faculty.html',
+        faculty: 'http://localhost:5173/instructor/table',
         student: 'http://localhost:5500/student/student.html',
         account_personal: 'http://localhost:5500/personal/personal.html',
       };
-      res.json({ success: true, redirectUrl: redirectUrls[role] || 'http://localhost:5500/login.html' });
+      res.json({ success: true, redirectUrl: redirectUrls[role] || 'http://localhost:5500//login/login.html' });
     } else {
       res.status(401).json({ error: 'Invalid username or password' });
     }
@@ -250,6 +423,7 @@ app.get('/api/admin/department/all', (req, res) => {
 
 // GET INSTRUCTOR DATA -------------------------------------------------------------------------------------------------------------------------
 // Get all instructors with their details
+
 app.get('/api/admin/instructor/all', (req, res) => {
   const query = `
     SELECT 

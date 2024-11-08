@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard with Code View</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+<script defer src="dashboard.js"></script> <!-- Link to the JS file -->
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-1/4 bg-gray-800 text-white h-screen p-4">
+            <h2 class="text-2xl font-bold mb-8">Student Dashboard</h2>
+            <ul>
+                <li>
+                    <a href="#" class="sidebar-link block py-2 px-4 rounded hover:bg-gray-700" data-target="profile">Profile</a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar-link block py-2 px-4 rounded hover:bg-gray-700" data-target="department-view">Department View</a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar-link block py-2 px-4 rounded hover:bg-gray-700" data-target="instructor-view">Instructor View</a>
+                </li>
+                <li>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="w-3/4 p-8">
+            <!-- Profile Section -->
+            <section id="profile-section" class="content-section active">
+                <h1 class="text-3xl font-bold mb-4">Student Profile</h1>
+                <div class="bg-white shadow rounded-lg p-4">
+                    <p><strong>Name:</strong> <span id="Student-name">Alice123</span></p>
+                    <p><strong>Role:</strong> <span id="Student-role">Student</span></p>
+                </div>
+            </section>
+
+            <!-- Department View Section -->
+            <section id="department-view-section" class="content-section">
+                <h1 class="text-3xl font-bold mb-4">Department View</h1>
+                <div class="bg-white shadow rounded-lg p-4">
+                    <table class="min-w-full border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 border-b">Department ID</th>
+                                <th class="py-2 px-4 border-b">Name</th>
+                                <th class="py-2 px-4 border-b">Contact</th>
+                                <th class="py-2 px-4 border-b">Location</th>
+                            </tr>
+                        </thead>
+                        <tbody id="department-table-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Instructor View Section -->
+            <section id="instructor-view-section" class="content-section">
+                <h1 class="text-3xl font-bold mb-4">Instructor View</h1>
+                <div class="bg-white shadow rounded-lg p-4">
+                    <table class="min-w-full border-collapse">
+                        <thead>
+                            <tr>
+                                <th class="py-2 px-4 border-b">Instructor ID</th>
+                                <th class="py-2 px-4 border-b">Name</th>
+                                <th class="py-2 px-4 border-b">Contact</th>
+                                <th class="py-2 px-4 border-b">Email</th>
+                                <th class="py-2 px-4 border-b">Head Of Dept</th>
+                                <th class="py-2 px-4 border-b">Courses</th>
+                                <th class="py-2 px-4 border-b">Department</th>
+                            </tr>
+                        </thead>
+                        <tbody id="instructor-table-body"></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- View Code Section -->
+            
+        </main>
+    </div>
+
+    <style>
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .sidebar-link.active {
+            background-color: #2d3748;
+        }
+        pre {
+            max-height: 300px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+    <script src="view.js"></script>
+</body>
+</html>

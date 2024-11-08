@@ -1,0 +1,113 @@
+/* Instructor.module.css */
+
+/* Container for the whole login section */
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4a90e2; /* Soft blue background */
+  padding: 20px;
+  text-align: center;
+  color: #fff; /* White text */
+  border-bottom: 3px solid #357ABD; /* Slightly darker border */
+}
+
+.titlePortal {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #357ABD;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #285E8E; /* Darker blue on hover */
+}
+
+/* Login Container */
+.loginContainer {
+  margin: 50px auto;
+  padding: 30px;
+  max-width: 400px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.formTitle {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.errorMessage {
+  color: #ff6b6b; /* Red for error message */
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+/* Form Styling */
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus {
+  border-color: #4a90e2;
+  outline: none;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+.loginBtn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loginBtn:hover {
+  background-color: #357ABD; /* Darker blue on hover */
+}
+
+.loginBtn:focus {
+  box-shadow: 0 0 5px rgba(53, 122, 189, 0.5);
+  outline: none;
+}
